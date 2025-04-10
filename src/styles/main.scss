@@ -1,5 +1,54 @@
-$bgColor : rgb(112, 20, 217);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$corDeFundo: #040714;
+$corTextMain: silver;
+$corTextSec: #f9f9f9;
 
 body{
-    background-color: $bgColor;
+    background-color: $corDeFundo;
+}
+
+@mixin text($fontSize: 16px){
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: $corTextMain
+}
+
+@mixin title($fontSize: 28px){
+    @include text($fontSize);
+    color: $corTextSec;
+}
+
+.text--big{
+    @include text(18px);
+}
+
+.text{
+    @include text;
+}
+
+.text--small{
+    @include text(12px);
+}
+
+.link-text{
+    @include text(18px);
+    color: $corTextSec;
+    text-decoration: underline;
+}
+
+.title--big{
+    @include text(44px)
+}
+
+.title{
+    @include text(40px)
+}
+
+.title--big{
+    @include text(28px)
 }
